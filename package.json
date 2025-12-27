@@ -1,0 +1,99 @@
+{
+    "name": "magic-cursor",
+    "displayName": "Magic Cursor ✨",
+    "description": "Transform your coding experience with beautiful rainbow trails, sparkle effects, and animated cursor magic! Make your VS Code come alive with stunning visual effects.",
+    "version": "1.0.0",
+    "publisher": "sitharaj",
+    "author": {
+        "name": "Sitharaj Seenivasan",
+        "url": "https://www.linkedin.com/in/sitharaj88"
+    },
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sitharaj88/magic-cursor.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sitharaj88/magic-cursor/issues"
+    },
+    "homepage": "https://github.com/sitharaj88/magic-cursor#readme",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#1a1a2e",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Themes",
+        "Other"
+    ],
+    "keywords": [
+        "cursor",
+        "animation",
+        "rainbow",
+        "trail",
+        "effects",
+        "sparkle",
+        "fun",
+        "visual",
+        "magic",
+        "power mode",
+        "particles",
+        "neon",
+        "glow"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "Magic Cursor",
+            "properties": {
+                "magicCursor.enableTrails": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable beautiful cursor trail effects"
+                },
+                "magicCursor.enableParticles": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable sparkle effects when typing"
+                },
+                "magicCursor.cursorStyle": {
+                    "type": "string",
+                    "enum": [
+                        "rainbow",
+                        "neon",
+                        "aurora",
+                        "sunset"
+                    ],
+                    "enumDescriptions": [
+                        "🌈 Rainbow - Colorful rainbow trail effect",
+                        "💜 Neon - Purple to cyan gradient with glow",
+                        "💚 Aurora - Green to blue Northern Lights effect",
+                        "🧡 Sunset - Warm orange to pink gradient"
+                    ],
+                    "default": "rainbow",
+                    "description": "Choose your cursor trail style"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "16.x",
+        "typescript": "^5.1.3"
+    }
+}
